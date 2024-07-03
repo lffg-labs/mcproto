@@ -1,0 +1,12 @@
+packet handshaking::Handshake (id: 0x00) {
+    proto_version: varint,
+    server_addr: string (255),
+    server_port: ushort,
+    next_state: handshaking::NextState,
+}
+
+enum handshaking::NextState (repr: varint) {
+    Status (1),
+    Login (2),
+    Transfer (3),
+}
